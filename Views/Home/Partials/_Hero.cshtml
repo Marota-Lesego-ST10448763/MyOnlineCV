@@ -1,0 +1,35 @@
+﻿@model MyOnlineCV.Models.CV
+
+<div class="container">
+    <div class="row align-items-center g-4">
+
+        <div class="col-lg-8">
+            <div class="hero-card">
+                <h1 class="display-6 mb-2">@Model.FullName</h1>
+                <p class="lead mb-2">@Model.TitleLine</p>
+                <p class="text-muted">@Model.LocationLine</p>
+
+                <div class="d-flex gap-3 mt-3">
+                    <a class="icon-link" href="@Model.Contact.LinkedInUrl"
+                       target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                    <a class="icon-link" href="@Model.Contact.GitHubUrl"
+                       target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="profile-card">
+                <img class="profile-img"
+                     src="@Model.ProfileImageUrl"
+                     alt="Profile photo of @Model.FullName" />
+            </div>
+        </div>
+
+    </div>
+</div>

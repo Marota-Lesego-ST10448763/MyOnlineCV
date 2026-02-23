@@ -1,0 +1,12 @@
+﻿@model MyOnlineCV.Models.CV
+
+<h2 class="h4 mb-3">Education</h2>
+
+@foreach (var edu in Model.Education)
+{
+    <div class="edu-block">
+        <div class="fw-semibold">@edu.Qualification</div>
+        <div class="text-muted">@edu.Institution</div>
+        <div class="text-muted small">@edu.Year</div>
+    </div>
+}

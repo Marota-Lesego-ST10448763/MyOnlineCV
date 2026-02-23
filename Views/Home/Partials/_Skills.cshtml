@@ -1,0 +1,35 @@
+﻿@model MyOnlineCV.Models.CV
+
+<h2 class="h4 mb-4">Skills</h2>
+
+<div class="mb-3">
+    <div class="text-muted mb-2">Languages & Data</div>
+    @foreach (var s in Model.Skills.LanguagesAndData)
+    {
+        <span class="tag">@s</span>
+    }
+</div>
+
+<div class="mb-3">
+    <div class="text-muted mb-2">Cloud</div>
+    @foreach (var s in Model.Skills.Cloud)
+    {
+        <span class="tag">@s</span>
+    }
+</div>
+
+<div class="mb-3">
+    <div class="text-muted mb-2">Core Concepts</div>
+    @foreach (var s in Model.Skills.CoreConcepts)
+    {
+        <span class="tag">@s</span>
+    }
+</div>
+
+<div>
+    <div class="text-muted mb-2">Soft Skills</div>
+    @foreach (var s in Model.Skills.SoftSkills)
+    {
+        <span class="tag">@s</span>
+    }
+</div>

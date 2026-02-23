@@ -1,0 +1,67 @@
+﻿@model MyOnlineCV.Models.CV
+@{
+    ViewData["Title"] = "Online CV";
+}
+
+<div id="top"></div>
+
+<div class="page">
+    <!-- Sticky name panel -->
+    <aside class="sticky-name">
+        <div class="sticky-name-inner">
+            <div class="name">@Model.FullName</div>
+            <div class="title text-muted">@Model.TitleLine</div>
+            <div class="location text-muted">@Model.LocationLine</div>
+
+            <div class="sticky-icons mt-3">
+                <a class="icon-link" href="@Model.Contact.LinkedInUrl" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a class="icon-link" href="@Model.Contact.GitHubUrl" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+                </a>
+            </div>
+
+            <div class="mt-3">
+                <a class="btn btn-sm btn-outline-light w-100" href="/files/CV.pdf" download>
+                    <i class="bi bi-download me-1"></i> Download PDF
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Timeline content -->
+    <section class="timeline">
+        <div class="timeline-line" aria-hidden="true"></div>
+
+        <div id="about" class="timeline-item left">
+            <div class="timeline-card">
+                @await Html.PartialAsync("Partials/_About", Model)
+            </div>
+        </div>
+
+        <div id="skills" class="timeline-item right">
+            <div class="timeline-card">
+                @await Html.PartialAsync("Partials/_Skills", Model)
+            </div>
+        </div>
+
+        <div id="projects" class="timeline-item left">
+            <div class="timeline-card">
+                @await Html.PartialAsync("Partials/_Projects", Model)
+            </div>
+        </div>
+
+        <div id="education" class="timeline-item right">
+            <div class="timeline-card">
+                @await Html.PartialAsync("Partials/_Education", Model)
+            </div>
+        </div>
+
+        <div id="contact" class="timeline-item left">
+            <div class="timeline-card">
+                @await Html.PartialAsync("Partials/_Contact", Model)
+            </div>
+        </div>
+    </section>
+</div>

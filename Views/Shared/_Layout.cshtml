@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MyOnlineCV</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar sticky-top">
+            <div class="container">
+                <a class="navbar-brand brand" href="#top">CV</a>
+
+                <ul id="cvNav" class="navbar-nav ms-auto flex-row align-items-center gap-2 gap-md-3">
+                    <li class="nav-item"><a class="nav-link" href="#about" data-section="about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills" data-section="skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects" data-section="projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education" data-section="education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-section="contact">Contact</a></li>
+
+                    <li class="nav-item ms-1 ms-md-2">
+                        <a class="btn btn-sm btn-outline-light" href="/files/CV.pdf" download>
+                            <i class="bi bi-download me-1"></i>
+                            PDF
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
